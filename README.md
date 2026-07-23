@@ -1,5 +1,6 @@
 # 🛡️ Phishing Triage & Kill Chain Analyzer
 
+![result](phishing-triage-frontend/Screenshot_3.png)
 <div align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
