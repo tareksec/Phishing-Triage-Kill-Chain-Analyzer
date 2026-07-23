@@ -1,0 +1,177 @@
+.killchain {
+  padding: var(--space-6);
+}
+
+.killchain__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.killchain__title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.killchain__mitre-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+.killchain__mitre-link:hover {
+  transform: translateY(-1px);
+}
+
+.killchain__mitre-badge {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding: var(--space-1) var(--space-2);
+  background: var(--accent-bg);
+  color: var(--accent-light);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+.killchain__mitre-label {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* Timeline grid */
+.killchain__timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+}
+
+.killchain__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  position: relative;
+  min-width: 0;
+}
+
+/* Connector lines */
+.killchain__connector {
+  position: absolute;
+  top: 20px;
+  left: -50%;
+  width: 100%;
+  height: 2px;
+  z-index: 0;
+}
+
+.killchain__stage:first-child .killchain__connector {
+  display: none;
+}
+
+.killchain__connector-line {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-tertiary);
+  transition: background var(--duration-normal) var(--ease-out);
+}
+
+.killchain__stage--past .killchain__connector-line,
+.killchain__stage--active .killchain__connector-line {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Node circle */
+.killchain__node {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--bg-glass-border);
+  position: relative;
+  z-index: 1;
+  transition: all var(--duration-normal) var(--ease-out);
+  font-size: 1rem;
+}
+
+.killchain__stage--past .killchain__node {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+}
+
+.killchain__stage--active .killchain__node {
+  background: var(--accent);
+  border-color: var(--accent-light);
+  transform: scale(1.2);
+  box-shadow: 0 0 20px var(--accent-glow), 0 0 40px rgba(59, 130, 246, 0.15);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.killchain__icon {
+  line-height: 1;
+}
+
+.killchain__label {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text-muted);
+  text-align: center;
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+.killchain__stage--active .killchain__label {
+  color: var(--accent-light);
+  font-weight: 700;
+}
+
+.killchain__stage--past .killchain__label {
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .killchain__timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .killchain__stage {
+    flex-direction: row;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
+  }
+
+  .killchain__connector {
+    top: -50%;
+    left: 19px;
+    width: 2px;
+    height: 100%;
+  }
+
+  .killchain__connector-line {
+    width: 2px;
+    height: 100%;
+  }
+
+  .killchain__node {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .killchain__stage--active .killchain__node {
+    transform: scale(1.15);
+  }
+}

@@ -1,0 +1,101 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  z-index: var(--z-navbar);
+  background: rgba(10, 14, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--bg-glass-border);
+}
+
+.navbar__inner {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--text-primary);
+}
+.navbar__brand:hover {
+  color: var(--text-primary);
+}
+
+.navbar__logo {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.navbar__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.navbar__badge {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: var(--space-1) var(--space-2);
+  background: var(--accent-bg);
+  color: var(--accent-light);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.navbar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  transition: all var(--duration-fast) var(--ease-out);
+  text-decoration: none;
+}
+.navbar__link:hover {
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+}
+
+.navbar__link--active {
+  color: var(--accent-light);
+  background: var(--accent-bg);
+}
+.navbar__link--active:hover {
+  color: var(--accent-light);
+  background: var(--accent-bg);
+}
+
+.navbar__link svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .navbar__badge {
+    display: none;
+  }
+  .navbar__title {
+    font-size: var(--text-base);
+  }
+}

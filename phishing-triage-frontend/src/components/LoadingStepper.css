@@ -1,0 +1,118 @@
+.stepper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-8);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.stepper__step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-normal) var(--ease-out);
+  opacity: 0.35;
+}
+
+.stepper__step--done {
+  opacity: 0.7;
+}
+
+.stepper__step--active {
+  opacity: 1;
+  background: var(--accent-bg);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.stepper__step--error {
+  opacity: 1;
+  background: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border);
+}
+
+/* Icon wrapper */
+.stepper__icon-wrapper {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.stepper__step--done .stepper__icon-wrapper {
+  background: var(--color-success-bg);
+}
+
+.stepper__step--active .stepper__icon-wrapper {
+  background: var(--accent-bg);
+  border: 2px solid var(--accent);
+}
+
+.stepper__step--error .stepper__icon-wrapper {
+  background: var(--color-danger-bg);
+  border: 2px solid var(--color-danger);
+}
+
+.stepper__check {
+  color: var(--color-success);
+  font-weight: 700;
+  font-size: var(--text-sm);
+}
+
+.stepper__error-icon {
+  color: var(--color-danger);
+  font-weight: 700;
+  font-size: var(--text-sm);
+}
+
+.stepper__step-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Pulsing ring for active step */
+.stepper__pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  animation: stepperPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes stepperPulse {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+
+/* Labels */
+.stepper__label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.stepper__step--active .stepper__label {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.stepper__step--done .stepper__label {
+  color: var(--text-secondary);
+  text-decoration: line-through;
+  text-decoration-color: var(--text-muted);
+}
+
+.stepper__error-msg {
+  font-size: var(--text-xs);
+  color: var(--color-danger);
+  margin-top: var(--space-1);
+}

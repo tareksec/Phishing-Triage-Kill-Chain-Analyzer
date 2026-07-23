@@ -1,0 +1,66 @@
+.auth-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+.auth-badge:hover {
+  transform: scale(1.03);
+}
+
+.auth-badge--md {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+}
+.auth-badge--sm {
+  padding: 2px var(--space-2);
+  font-size: var(--text-xs);
+}
+
+.auth-badge__icon {
+  font-size: 0.75em;
+  line-height: 1;
+}
+
+.auth-badge__label {
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.auth-badge__result {
+  font-weight: 700;
+}
+
+/* --- Color variants --- */
+.auth-badge--pass {
+  background: var(--auth-pass-bg);
+  color: var(--auth-pass);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.auth-badge--fail {
+  background: var(--auth-fail-bg);
+  color: var(--auth-fail);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.auth-badge--softfail {
+  background: var(--auth-softfail-bg);
+  color: var(--auth-softfail);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.auth-badge--neutral {
+  background: var(--auth-neutral-bg);
+  color: var(--auth-neutral);
+  border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+.auth-badge--none {
+  background: var(--auth-none-bg);
+  color: var(--auth-none);
+  border: 1px solid rgba(71, 85, 105, 0.2);
+}

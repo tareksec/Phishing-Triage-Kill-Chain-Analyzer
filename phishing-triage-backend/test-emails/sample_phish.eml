@@ -1,0 +1,35 @@
+Delivered-To: victim@example.com
+Received: from mx.example.com (mx.example.com [10.0.0.1])
+	by mail.example.com with ESMTPS id abc123
+	for <victim@example.com>; Mon, 20 Jul 2026 09:15:22 -0700
+Received: from spoofed-relay.ru (spoofed-relay.ru [203.0.113.5])
+	by mx.example.com with ESMTP id def456
+	for <victim@example.com>; Mon, 20 Jul 2026 09:15:20 -0700
+Authentication-Results: mx.example.com;
+	spf=fail (google.com: domain of billing@paypa1-secure.ru does not designate 203.0.113.5 as permitted sender) smtp.mailfrom=billing@paypa1-secure.ru;
+	dkim=none;
+	dmarc=fail (p=REJECT) header.from=paypa1-secure.ru
+From: "PayPal Support" <billing@paypa1-secure.ru>
+Reply-To: recovery-team@totally-legit-support.com
+To: victim@example.com
+Subject: Urgent: Your account has been limited
+Date: Mon, 20 Jul 2026 09:15:00 -0700
+Content-Type: multipart/alternative; boundary="boundary123"
+
+--boundary123
+Content-Type: text/plain; charset="utf-8"
+
+Dear Customer,
+
+We noticed unusual activity. Please verify your account immediately:
+http://paypa1-secure.ru/verify?id=98213
+
+--boundary123
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<p>Dear Customer,</p>
+<p>We noticed unusual activity. Please verify your account immediately:</p>
+<a href="http://paypa1-secure.ru/verify?id=98213">https://www.paypal.com/verify</a>
+</body></html>
+--boundary123--
