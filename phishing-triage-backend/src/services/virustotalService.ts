@@ -51,7 +51,7 @@ export async function enrichUrls(urls: ExtractedUrl[]): Promise<UrlReputation[]>
         throw new Error(`VirusTotal HTTP ${res.status}`);
       }
 
-      const json = await res.json();
+      const json = await res.json() as any;
       const stats = json?.data?.attributes?.last_analysis_stats;
       
       if (!stats) {

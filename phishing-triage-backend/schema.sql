@@ -1,10 +1,5 @@
 -- Phishing Triage & Kill Chain Analyzer — Phase 1 schema
--- Run this in phpMyAdmin (XAMPP) or via mysql CLI after creating the database.
-
-CREATE DATABASE IF NOT EXISTS phishing_triage
-  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-USE phishing_triage;
+-- Import this directly into the selected database: techvrs_phishing_triage
 
 CREATE TABLE IF NOT EXISTS analyses (
   id INT AUTO_INCREMENT PRIMARY KEY,

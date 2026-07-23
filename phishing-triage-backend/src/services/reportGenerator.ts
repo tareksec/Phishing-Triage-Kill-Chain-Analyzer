@@ -59,7 +59,7 @@ export async function generateReportPdf(data: any): Promise<Buffer> {
   const pdf = await mdToPdf(
     { content: markdown },
     {
-      pdf_options: { format: 'A4', margin: '20mm', printBackground: true },
+      pdf_options: { format: 'A4', margin: { top: '20mm', right: '20mm', bottom: '20mm', left: '20mm' }, printBackground: true },
       launch_options: { args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'] }
     }
   );
